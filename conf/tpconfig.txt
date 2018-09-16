@@ -1,0 +1,10 @@
+GRUPODIR=/home/maximiliano/SisOp/TP/Grupo02
+CONFDIR=/home/maximiliano/SisOp/TP/Grupo02/conf
+LOGDIR=/home/maximiliano/SisOp/TP/Grupo02/conf/log
+BINDIR=/home/maximiliano/SisOp/TP/Grupo02/bin
+MAESTROSDIR=/home/maximiliano/SisOp/TP/Grupo02/maestros
+ARRIBOSDIR=/home/maximiliano/SisOp/TP/Grupo02/arribos
+ACEPTADOSDIR=/home/maximiliano/SisOp/TP/Grupo02/aceptados
+RECHAZADOSDIR=/home/maximiliano/SisOp/TP/Grupo02/rechazados
+PROCESADOSDIR=/home/maximiliano/SisOp/TP/Grupo02/procesados
+SALIDADIR=/home/maximiliano/SisOp/TP/Grupo02/salida
