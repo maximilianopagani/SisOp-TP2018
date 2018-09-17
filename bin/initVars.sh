@@ -43,9 +43,9 @@ initVars()
 	echo
 	
 	IFS_BACKUP=$IFS 
-	IFS="="
+	IFS="-"
 
-	while read VARIABLE DIRECCION
+	while read VARIABLE DIRECCION USUARIO TIMESTAMP
 
 	do	
 		if [ ! -d "$DIRECCION" ]		
