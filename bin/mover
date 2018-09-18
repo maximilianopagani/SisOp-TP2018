@@ -1,0 +1,61 @@
+#!/bin/bash
+#Mover - Script para mover archivos
+
+MOV_FILE="$1"
+MOV_DST="$2"
+
+DIR_FILE="${MOV_FILE%/*}"
+NAME_FILE="${MOV_FILE##*/}"
+DIR_DUP=$DUPDIR
+
+#CHEQUEO EXISTENCIA DEL ARCHIVO DE ENTRADA
+if [ ! -f "$MOV_FILE" ]; then
+	MESSAGE="El archivo ${MOV_FILE} no existe"
+	echo "${MESSAGE}"
+	glog mover "${MESSAGE}" "ERR"
+	exit 1
+fi
+
+#CHEQUEO EXISTENCIA DEL DIRECTORIO DE SALIDA
+if [ ! -d "$MOV_DST" ]; then
+	echo "El archivo ${MOV_DST} no existe".
+	glog mover "${MESSAGE}" "ERR"
+	exit 1
+fi
+
+#CHEQUEO NO ESTAR MOVIENDO AL MISMO LUGAR
+if [ "$DIR_FILE" == "$MOV_DST" ]; then
+	MESSAGE="El directorio de entrada es el mismo que el de salida"
+	echo "${MESSAGE}"
+	glog mover "${MESSAGE}" "ERR"
+	exit 1
+fi
+
+#MUEVO ARCHIVO
+if [ ! -f "${MOV_DST}/${NAME_FILE}" ]; then
+	cp "$MOV_FILE" "$MOV_DST"
+	MESSAGE="El archivo ${MOV_FILE} ha sido ubicado en el directorio ${MOV_DST}"
+else 
+	if [ ! -d "$DIR_DUP" ]; then
+		mkdir "$DIR_DUP"
+	fi
+	SECUENCIA=1
+	EXISTE_SEC=0
+	while [ $EXISTE_SEC -eq 0 ]
+	do
+		PROXREPETIDO="${DIR_DUP}/${NAME_FILE}_${SECUENCIA}"
+		# Si la secuencia existe, voy a la siguiente. Si no, corto el ciclo
+		if [ ! -f "$PROXREPETIDO" ]; then
+			EXISTE_SEC=1
+		else
+			SECUENCIA=$(( SECUENCIA+1 ))
+		fi
+
+	done
+
+	# Agrego secuencia valida para el archivo duplicado
+	NEWFILE="${DIR_DUP}/${NAME_FILE}_${SECUENCIA}"
+
+	cp "$MOV_FILE" "$NEWFILE" #ver si se puede pasar los duplicados en subdirectorios...
+fi
+exit 0
