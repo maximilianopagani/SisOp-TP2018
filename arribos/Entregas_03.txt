@@ -1,4 +1,3 @@
-Operador;Nro Pieza;Apellido y Nombre;Tipo Doc;Nro Doc;Codigo Postal
 RAP;3784558;                      KRACHER NOELIA;LE;21003881;1010
 FAS;126457;              ABALOS  SANTIAGO ;CI;26563298;1141
 RAP;3797894;              RUA               PABLO ;LE;34897951;1010

@@ -1,6 +1,6 @@
 #INICIALIZAR AMBIENTE DESDE $GRUPO/bin/initVars.sh  EL ARCHIVO DE CONFIGURACION /conf/tpconfig.txt
 
-initVars() 
+init() 
 {	
 	SCRIPTPATH="$( cd "$(dirname "$0")" ; cd .. ; pwd -P )" # A modificar cuando tengamos los scripts del principio
 	
@@ -8,7 +8,7 @@ initVars()
 
 	echo
 
-	if [ "$TP_SISOP_INIT" = "YES" ] #Variable que vendría de más arriba
+	if [ "$TP_SISOP_INIT" == "YES" ] #Variable que vendría de más arriba
 	then
 		INIT_SUCCESS=FALSE
 		echo "Error: sistema ya inicializado."
@@ -109,7 +109,8 @@ initVars()
 
 	if [ "$INIT_SUCCESS" = "TRUE" ]
 	then	
-		export TP_SISOP_INIT=YES
+		TP_SISOP_INIT=YES
+		export TP_SISOP_INIT
 		echo "Sistema inicializado con éxito."
 	else
 		echo "Error al inicializar el sistema."
@@ -120,4 +121,4 @@ initVars()
 	return 1;
 }
 
-initVars
+init
