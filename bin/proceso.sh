@@ -1,16 +1,7 @@
 #!/bin/bash
 #Glog - Script log errores
 
-####################################################
-#	Principal
-####################################################
-
-echo "Programa Proceso"
-
-
-
-
-#	Modo de uso: 
+#	Funciones - Modo de uso:
 #	(debe poder leerse MAESTROSDIR)
 #
 #	verificarExistenciaOperador "CODIGO_OPERADOR"
@@ -62,7 +53,7 @@ verificarVigenciaContrato()
 
 	if [ ${SEGUNDOSARRIBO} -ge ${SEGUNDOSFIN} ]
 	then
-		echo "La operadora no tiene un contrato vigente"
+		echo "La operadora no tiene un contrato vigente."
 		#glog
 		return 0
 	else
@@ -93,3 +84,105 @@ verificarCPSucursalOperador()
 	#glog
 	return 0	
 }
+
+######################################################################################################
+#                                        PROCESO                                                     #
+######################################################################################################
+
+main()
+{
+	if [ "$TP_SISOP_INIT" != "YES" ] #Variable que vendría de más arriba
+	then
+		echo "Error: el sistema no se ha inicializado y no se podrá correr el proceso."
+		#glog
+
+		return 0
+	fi
+
+	TP_SISOP_CICLO=0
+
+	while true
+	do
+		TP_SISOP_CICLO=$((TP_SISOP_CICLO+1))
+
+		for FILE in $ARRIBOSDIR/*
+		do
+			#nota: FILE es el absolute path. Ej: /home/..../arribos/Entreas_02.txt
+			#si queremos que solo queden como Entregas_02.txt, hay que poner cd $ARRIBOSDIR antes
+
+			echo "============================ Procesando archivo $FILE... ============================"
+			#glog
+
+			ARCHIVOACEPTADO=1
+
+			#verificar nombre
+			#verificar no vacio
+			#verificar extension .txt
+			#verificar si ya se procesó otro con mismo nombre en PROCESADOSDIR
+			#chequear suma codigo postal y cantidad de registros
+				#si ok continuar, sino mover **archivo completo** a rechazados
+			if [ "$ARCHIVOACEPTADO" == "0" ]
+			then	
+				echo "Archivo $FILE rechazado."
+				#glog
+				# Mover el archivo completo a rechazados	
+			else
+				while read REGISTRO
+				do
+					REGISTROACEPTADO=1
+
+					OPERADOR=$(cut -d';' -f1 <<<$REGISTRO)
+					CODIGOPOSTAL=$(cut -d';' -f6 <<<$REGISTRO)
+
+					if [ "$OPERADOR" != "" ] #Si no estoy en la ultima linea
+					then
+
+						echo "=========== Procesando registro $REGISTRO... ==========="
+						#glog
+
+						verificarExistenciaOperador "$OPERADOR"
+						if [ "$?" == "0" ]
+						then
+							REGISTROACEPTADO=0
+						fi
+
+						verificarVigenciaContrato "$OPERADOR" "07" #MES_ARRIBO
+						if [ "$?" == "0" ]
+						then
+							REGISTROACEPTADO=0
+						fi
+
+						verificarCPSucursalOperador "$OPERADOR" "$CODIGOPOSTAL"
+						if [ "$?" == "0" ]
+						then
+							REGISTROACEPTADO=0
+						fi
+					fi
+
+					if [ "$REGISTROACEPTADO" == "0" ]
+					then
+						echo "Registro rechazado."
+						#glog
+						#hacer append del registro a Entregas_Rechazadas
+					else
+						#procesar registro actual, formatear como lo pedido y append a Entregas_OPERADOR con todos los campos pedidos
+					fi
+
+				done <$FILE
+
+				#Mover el archivo a procesados
+			fi
+		done
+
+		echo "====================================================="
+		echo "Finalizado ciclo de procesamiento nro $TP_SISOP_CICLO"
+		#glog
+		echo "====================================================="
+
+		sleep 60
+	done
+	
+	return 1
+}
+
+main
