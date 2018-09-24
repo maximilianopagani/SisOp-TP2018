@@ -1,20 +1,8 @@
 #!/bin/bash
 #Glog - Script log errores
 
-#	Funciones - Modo de uso:
-#	(debe poder leerse MAESTROSDIR)
-#
-#	verificarExistenciaOperador "CODIGO_OPERADOR"
-#	ejemplo: verificarExistenciaOperador "OCA"
-#	devuelve 1 si la verificacion fue con éxito, 0 en caso contrario
-#
-#	verificarVigenciaContrato "CODIGO_OPERADOR" "MES_ARRIBO"
-# 	ejemplo: verificarVigenciaContrato "OCA" "02"
-#	devuelve 1 si la verificacion fue con éxito, 0 en caso contrario
-#
-#	verificarCPSucursalOperador "CODIGO_OPERADOR" "CODIGO_POSTAL"
-#	verificarCpSucursalOperador "OCA" "1214"
-#	devuelve 1 si la verificacion fue con éxito, 0 en caso contrario
+#chmod +x ./mover
+#chmod +x ./glog
 
 verificarExistenciaOperador()
 {
@@ -215,27 +203,36 @@ verificarSiNoFueProcesado()
 
 STRINGRESULT=""
 
-autocompletarString()
+autoCompletarString()
 {
 	STRING="$1"
 	CARACTER="$2"
 	SENTIDO="$3"
 	TOTAL="$4"
 
-	while [ ${#STRING} != $TOTAL ]
-	do
-		if [ "$SENTIDO" == "IZQ" ]
+	if [ "$SENTIDO" == "IZQ" ]
+	then
+		while [ ${#STRING} -lt $TOTAL ]
+		do
+			STRING="$CARACTER""${STRING}"
+		done
+	else
+		if [ "$SENTIDO" == "DER" ]
 		then
-			STRING="$CARACTER$STRING"
-		else
-			if [ "$SENTIDO" == "DER" ]
-			then
-				STRING="$STRING$CARACTER"
-			fi
+			while [ ${#STRING} -lt $TOTAL ]
+			do
+				STRING="${STRING}""$CARACTER"
+			done
 		fi
-	done
+	fi
 
-	STRINGRESULT=$STRING
+	STRINGRESULT="${STRING}"
+}
+
+removerEspaciosADerecha()
+{
+	STRING="$1"
+	STRINGRESULT=$(sed 's|\(^.*[^ ]\)[ ]*$|\1|' <<<"$STRING")
 }
 
 
@@ -254,6 +251,9 @@ main()
 
 	TP_SISOP_CICLO=0
 
+	echo "====================== Iniciando proceso. Directorio a buscar: $ARRIBOSDIR ======================"
+	echo
+
 	while true
 	do
 		TP_SISOP_CICLO=$((TP_SISOP_CICLO+1))
@@ -263,17 +263,17 @@ main()
 		#glog
 		echo "====================================================="
 
-		for FILE in $ARRIBOSDIR/*
+		for FILE in "$ARRIBOSDIR"/*
 		do
-			echo "============================ Procesando archivo $FILE... ============================"
-			#glog
-
 			ARCHIVOACEPTADO=1
 			MOTIVORECHAZO=""
 
 			# $FILE : /home/...../Entregas_01.txt
 			FILENAME=$(echo "$FILE" | rev | cut -d '/' -f1 | rev) # Entregas_01.txt
 			MESARRIBO=$(echo "$FILENAME" | cut -d '.' -f1 | cut -d '_' -f2) # 01
+
+			echo "====================== Procesando archivo $FILENAME... ======================"
+			#glog
 
 			########### Verificación de archivo no vacío ###########
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -283,11 +283,11 @@ main()
 					echo "Verificando si el archivo $FILENAME es no vacio... ERROR"
 					#glog
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El archivo de entregas está vacio"
 				else
 					echo "Verificando si el archivo $FILENAME es no vacio... OK"
 				fi
 			fi
-			########################################################
 			
 			############ Verificación de extensión .txt ############
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -298,12 +298,12 @@ main()
 					echo "Verificando extension .txt de $FILENAME... ERROR"
 					#glog
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El archivo de entregas no posee extension .txt"
 				else
 					echo "Verificando extension .txt de $FILENAME... OK"
 					#glog
 				fi	
 			fi
-			########################################################
 
 			######### Verificación del nombre del archivo ##########
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -312,9 +312,9 @@ main()
 				if [ "$?" == "0" ]
 				then
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El archivo de entregas posee un nombre distinto al estandar esperado (Entregas_XX)"
 				fi
 			fi
-			########################################################
 
 			########### Verificación del mes del arribo ############
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -323,9 +323,9 @@ main()
 				if [ "$?" == "0" ]
 				then
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El archivo de entregas es de un mes posterior al actual"
 				fi
 			fi
-			########################################################
 
 			######### Verificación del trailer del arribo ##########
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -334,9 +334,9 @@ main()
 				if [ "$?" == "0" ]
 				then
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El trailer del archivo de entregas no coincide con los datos de los registros"
 				fi
 			fi
-			########################################################
 
 			############ Verificación si ya se procesó #############
 			if [ "$ARCHIVOACEPTADO" == "1" ]
@@ -345,15 +345,16 @@ main()
 				if [ "$?" == "0" ]
 				then
 					ARCHIVOACEPTADO=0
+					MOTIVORECHAZO="El archivo de entregas ya fué procesado anteriormente"
 				fi
 			fi
-			########################################################
-
+			
+			############ Proseguimos con los registros #############
 			if [ "$ARCHIVOACEPTADO" == "0" ]
 			then	
 				echo "Archivo $FILENAME RECHAZADO."
 				#glog
-				# Mover el archivo completo a rechazados	
+				# Mover el archivo completo a rechazados    "$GRUPODIR/mover" "$FILE" "$RECHAZADOSDIR"	
 			else
 				while read REGISTRO
 				do
@@ -378,7 +379,6 @@ main()
 								MOTIVORECHAZO="No existe ese operador en el maestro de operadores"
 							fi	
 						fi
-						########################################################
 
 						########### Verificación vigencia contrato #############
 						if [ "$REGISTROACEPTADO" == "1" ]
@@ -390,7 +390,6 @@ main()
 								MOTIVORECHAZO="Falla en la verificación de vigencia del contrato con ese operador"
 							fi
 						fi
-						########################################################
 
 						########## Verificación existencia sucursal ############
 						if [ "$REGISTROACEPTADO" == "1" ]
@@ -402,8 +401,8 @@ main()
 								MOTIVORECHAZO="No existe una sucursal con ese CP en el maestro de sucursales"
 							fi
 						fi
-						########################################################
 
+						######### Procesamos los registros exitosos ############
 						if [ "$REGISTROACEPTADO" == "0" ]
 						then
 							echo "Registro RECHAZADO."
@@ -411,13 +410,45 @@ main()
 							#glog debe tener Operador, codigo postal, numero de pieza, y motivo de rechazo
 						else
 							echo "Registro aceptado, se procede a procesarlo."
-							#procesar registro actual, formatear como lo pedido y append a Entregas_OPERADOR con todos los campos pedidos
+
+							NROPIEZA=$(cut -d';' -f2 <<<$REGISTRO)
+							NOMBREYAPELLIDO=$(cut -d';' -f3 <<<$REGISTRO)
+							TIPODOC=$(cut -d';' -f4 <<<$REGISTRO)
+							DOCUMENTO=$(cut -d';' -f5 <<<$REGISTRO)
+							LINEASUCURSAL=$(grep ".*;${CODIGOPOSTAL};${OPERADOR};[^;]*$" "$MAESTROSDIR/Sucursales.txt")
+							CODIGOSUCURSAL=$(cut -d';' -f1 <<<$LINEASUCURSAL)
+							NOMBRESUCURSAL=$(cut -d';' -f2 <<<$LINEASUCURSAL)
+							DIRECCIONSUCURSAL=$(cut -d';' -f3 <<<$LINEASUCURSAL)
+							PRECIOSUCURSAL=$(cut -d';' -f8 <<<$LINEASUCURSAL)
+							
+							autoCompletarString "$NROPIEZA" "0" "IZQ" "20"
+							NROPIEZA="$STRINGRESULT"
+							
+							removerEspaciosADerecha "$NOMBREYAPELLIDO"
+							autoCompletarString "$STRINGRESULT" " " "IZQ" "50"
+							NOMBREYAPELLIDO="$STRINGRESULT"
+
+							autoCompletarString "$DOCUMENTO" "0" "IZQ" "11"
+							DOCUMENTO="$STRINGRESULT"
+
+							removerEspaciosADerecha "$NOMBRESUCURSAL"
+							autoCompletarString "$STRINGRESULT" " " "IZQ" "25"
+							NOMBRESUCURSAL="$STRINGRESULT"
+
+							removerEspaciosADerecha "$DIRECCIONSUCURSAL"
+							autoCompletarString "$STRINGRESULT" " " "IZQ" "25"
+							DIRECCIONSUCURSAL="$STRINGRESULT"
+
+							autoCompletarString "$PRECIOSUCURSAL" "0" "IZQ" "6"
+							PRECIOSUCURSAL="$STRINGRESULT"
+
+							echo "$NROPIEZA""$NOMBREYAPELLIDO""$TIPODOC""$DOCUMENTO""$CODIGOPOSTAL""$CODIGOSUCURSAL""$NOMBRESUCURSAL""$DIRECCIONSUCURSAL""$PRECIOSUCURSAL""$FILENAME">>"$SALIDADIR/Entregas_$OPERADOR"
 						fi
 					fi
 
 				done <$FILE
 
-				#Mover el archivo a procesados
+				# Mover a procesados    "$GRUPODIR/mover" "$FILE" "$PROCESADOSDIR"
 			fi
 		done
 
