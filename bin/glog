@@ -44,7 +44,7 @@ glog () {
 	fi
 	if [ ${FILESIZE} -gt ${MAXSIZE} ]; then
 		echo -n "" > "${DIRLOG}/${LOG_FILE}"
-		echo "$(date +%Y-%m-%d_%H:%M:%S) - Se elimina el log por exceder la capacidad maxima permitida de ${MAXSIZE}KB" >> "${DIRLOG}/${LOG_FILE}"
+		echo "$(date +%Y-%m-%d_%H:%M:%S) - Se elimina el log por exceder la capacidad maxima permitida de ${MAXSIZE} BYTES" >> "${DIRLOG}/${LOG_FILE}"
 	fi 
 	echo "$(date +%Y-%m-%d_%H:%M:%S) - ${USER} - ${COMMAND} - ${TYPE} - ${MSG}" >> "${DIRLOG}/${LOG_FILE}"
 }

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+chmod +x ./glog
+
+ps cax | grep "procesoSisOp.sh" > /dev/null
+
+if [ $? -eq 0 ]; 
+then
+	pkill "procesoSisOp.sh"
+	echo "============ Se invoca el comando correctamente. Se aborta la ejecución de procesoSisOp.sh ============"
+	./glog "stop" "Se invoca el comando correctamente. Se aborta la ejecución de procesoSisOp.sh"
+else
+	echo "============ [ERROR] No se puede invocar el comando ya que procesoSisOp.sh no se encuentra en ejecución ============"
+	./glog "stop" "No se pudo invocar el comando ya que procesoSisOp.sh no se encuentra en ejecución" "ERROR"
+fi

@@ -28,7 +28,7 @@ LOGSIZE=10000
 GRUPODIR=$(pwd)
 CONFDIR="${GRUPODIR}/conf"
 LOGDIR="${GRUPODIR}/conf/log"
-ARCHIVOLOG="${GRUPODIR}/conf/log/Instalacion.log"
+ARCHIVOLOG="${GRUPODIR}/conf/log/instalacion.log"
 ARCHIVOCONF="${CONFDIR}/tpconfig.txt"
 BINDIR="${GRUPODIR}/bin"
 MAESTROSDIR="${GRUPODIR}/maestros"
@@ -59,9 +59,9 @@ mostarEstructuraDeArchivosYDirectorios(){
 CrearDirectoriosIniciales(){
 	mkdir -p "${CONFDIR}"
 	mkdir -p "${LOGDIR}"
-	./glog Instalacion "Ing FUNCION CrearDirectoriosIniciales"
-	./glog Instalacion "${MENSAJECREACIONCONFDIR}"
-	./glog Instalacion "${MENSAJECREACIONLOGDIR}"
+	./glog instalacion "Ing FUNCION CrearDirectoriosIniciales"
+	./glog instalacion "${MENSAJECREACIONCONFDIR}"
+	./glog instalacion "${MENSAJECREACIONLOGDIR}"
 }
 
 
@@ -244,7 +244,7 @@ consultarRutaEjecutables(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTABINDIR}"
-		./glog Instalacion "${MENSAJECONSULTABINDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTABINDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -270,7 +270,7 @@ consultarRutaMaestros(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTAMAEDIR}"
-		./glog Instalacion "${MENSAJECONSULTAMAEDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTAMAEDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -296,7 +296,7 @@ consultarRutaExternos(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTAEXTDIR}"
-		./glog Instalacion "${MENSAJECONSULTAEXTDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTAEXTDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -322,7 +322,7 @@ consularRutaAceptados(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTAACEPDIR}"
-		./glog Instalacion "${MENSAJECONSULTAACEPDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTAACEPDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -348,7 +348,7 @@ consultarRutaRechazados(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTARECHDIR}"
-		./glog Instalacion "${MENSAJECONSULTARECHDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTARECHDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -373,7 +373,7 @@ consultarRutaProcesados(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTAPROCDIR}"
-		./glog Instalacion "${MENSAJECONSULTAPROCDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTAPROCDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -400,7 +400,7 @@ consutarRutaSalida(){
 	while [ "${VARBOOL}" == "F" ]
 	do
 		echo "${MENSAJECONSULTASALDIR}"
-		./glog Instalacion "${MENSAJECONSULTASALDIRLOG}"
+		./glog instalacion "${MENSAJECONSULTASALDIRLOG}"
 		read INGRESO1
 		INGRESO=${INGRESO1,,}
 		if [ ${#INGRESO} -gt 0 ];
@@ -490,7 +490,7 @@ ConsultasDirectorios(){
 		ConsultasAlUsuario
 		mostrarEstructuraDeArchivos
 		echo "${MENSAJECONSULTAINICIOINSTALACION}"
-		./glog Instalacion "${MENSAJEINSTALACIONCOMPLETARLOG}"
+		./glog instalacion "${MENSAJEINSTALACIONCOMPLETARLOG}"
 		read OPCION
 		OP=${OPCION,,}
 			while [[ ${OP} != "si"  &&  ${OP} != "no"  && ${OP} != "cancel" ]]
@@ -509,7 +509,7 @@ MENSAJECREADONDIRECTORIOS="Creando Estructuras de directorio....."
 #Creacion de Directorios
 crearDirectoriosNoExistentes(){
 	echo "${MENSAJECREADONDIRECTORIOS}"
-	./glog Instalacion "${MENSAJECREADONDIRECTORIOS}" 
+	./glog instalacion "${MENSAJECREADONDIRECTORIOS}" 
 	mkdir -p "${BINDIR}"
 	mkdir -p "${MAESTROSDIR}"
 	mkdir -p "${ARRIBOSDIR}"
@@ -534,7 +534,7 @@ MENSAJEINSTALACIONENCURSO="Creando Estructuras de directorio....."
 instalar(){
 	mostrarHeader
 	echo "${MENSAJEINSTALACIONENCURSO}"
-	./glog Instalacion "${MENSAJEINSTALACIONENCURSO}\n"
+	./glog instalacion "${MENSAJEINSTALACIONENCURSO}\n"
 	echo ''
 
 	mostrarEstructuraDeArchivos
@@ -602,7 +602,7 @@ chequearFaltantes(){
 		mostarEstructuraDeArchivosYDirectorios "$1"
 	else
 		diff -r "$1" "$2"
-		diff -r "$1" "$2" | ./glog Instalacion "$1"
+		diff -r "$1" "$2" | ./glog instalacion "$1"
 	fi
 	echo ''
 }
@@ -622,10 +622,10 @@ verificarInstalacionCompleta(){
  	declare local temp="$(chequearFaltantes "$RUTAEJECUTABLES" "$BINDIR")"
 	if [ ${#temp} -gt 0 ]; then		
 		echo -e "${MENSAJEINSTALACIONINCOMPLETA}"
-		./glog Instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
+		./glog instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
 		echo ''
 		echo "${MENSAJEINSTALACIONFALTANTES}"
-		./glog Instalacion "${MENSAJEINSTALACIONFALTANTES}"
+		./glog instalacion "${MENSAJEINSTALACIONFALTANTES}"
 		echo 'Entrando'
 		echo "${RUTAEJECUTABLES}"
 		echo "${BINDIR}"
@@ -638,9 +638,9 @@ verificarInstalacionCompleta(){
 		temp="$(chequearFaltantes "$RUTAMAESTROS" "$MAESTROSDIR")"
 		if [ ${#temp} -gt 0 ]; then
 			echo -e "${MENSAJEINSTALACIONINCOMPLETA}"
-			./glog Instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
+			./glog instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
 			echo ''
-			./glog Instalacion "${MENSAJEINSTALACIONFALTANTES}"
+			./glog instalacion "${MENSAJEINSTALACIONFALTANTES}"
 			echo ''
 			chequearFaltantes "$RUTAMAESTROS" "$MAESTROSDIR"	
 			echo ''
@@ -650,17 +650,17 @@ verificarInstalacionCompleta(){
 			if  [ -d "${CONFDIR}" ] && [  -d "${LOGDIR}" ] && [ -d "${BINDIR}" ] && [  -d "${MAESTROSDIR}" ] && [ -d "${ACEPTADOSDIR}" ]  && [  -d "${RECHAZADOSDIR}" ] && [  -d "${PROCESADOSDIR}" ] && [  -d "${SALIDADIR}" ] 
 				then
 				echo -e "${MENSAJEINSTALACIONCOMPLETA}"
-				./glog Instalacion "${MENSAJEINSTALACIONCOMPLETALOG}"
+				./glog instalacion "${MENSAJEINSTALACIONCOMPLETALOG}"
 				echo ''
 				echo "${MENSAJEINSTALACIONCANCELADA}"
-				./glog Instalacion "${MENSAJEINSTALACIONCANCELADA}"
+				./glog instalacion "${MENSAJEINSTALACIONCANCELADA}"
 				echo ''
 				#finalizarInstalacion
 			else
 				
 				echo "Faltan directorios"				
 				echo -e "${MENSAJEINSTALACIONINCOMPLETA}"
-				./glog Instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
+				./glog instalacion "${MENSAJEINSTALACIONINCOMPLETALOG}"
 				echo ''
 				mostrarMSJreparacion
 			fi
@@ -715,7 +715,7 @@ repararSistema(){
 
 
 MENSAJEREPARACION="Usted puede si desea reparar el sistema utilizando el siguiente comando:"
-MENSAJECOMANDOREPARACION="./Instalacion.sh -r"
+MENSAJECOMANDOREPARACION="./instalacion.sh -r"
 
 mostrarMSJreparacion(){
 	echo "${MENSAJEREPARACION}"
@@ -724,10 +724,10 @@ mostrarMSJreparacion(){
 }
 
 showhelp(){
-#./glog Instalacion "Muestra de Ayuda - FUNC Showhelp"
+#./glog instalacion "Muestra de Ayuda - FUNC Showhelp"
 clear
-echo "Uso:    ./Instalacion.sh"
-echo "        ./Instalacion.sh [OPTION]"
+echo "Uso:    ./instalacion.sh"
+echo "        ./instalacion.sh [OPTION]"
 echo "Desc:   Instalador de sistema de procesos de Archvios de Correo"
 echo ""
 echo "[OPTION]"
@@ -777,13 +777,13 @@ then
 	#CrearDirectoriosIniciales
 	mostrarHeader
 	echo 'Inicio de Ejecución de la Instalacion'
-	./glog Instalacion 'Inicio de Ejecución de la Instalacion'
+	./glog instalacion 'Inicio de Ejecución de la Instalacion'
 	echo ''
 	echo "Directorio predefinido de Configuración: ${CONFDIR}"
-	./glog Instalacion "Directorio predefinido de Configuración: ${CONFDIR}"
+	./glog instalacion "Directorio predefinido de Configuración: ${CONFDIR}"
 	echo ''
 	echo "Directorio predefinido para los Log: ${ARCHIVOLOG}"
-	./glog Instalacion "Directorio predefinido para los Log: ${ARCHIVOLOG}"
+	./glog instalacion "Directorio predefinido para los Log: ${ARCHIVOLOG}"
 	echo ''
 
 	if [ -f ${ARCHIVOCONF} ]
@@ -796,7 +796,7 @@ then
 				instalar
 			else
 	 			echo "Cancelar instalacion"
-				./glog Instalacion "Cancelar Instalacion"
+				./glog instalacion "Cancelar Instalacion"
 		fi
 	fi
 fi
