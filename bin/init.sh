@@ -243,7 +243,7 @@ init()
 		export SALIDADIR
 
 		echo "Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano"
-		"$BINDIR"./start
+		"$BINDIR"/start
 		
 		return 1
 	else
