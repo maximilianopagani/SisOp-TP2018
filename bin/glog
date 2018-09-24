@@ -17,7 +17,7 @@ fi
 LOG_FILE="${COMMAND}.log"
  
 setdir(){
-	if [ ${COMMAND} == "Instalacion" ]
+	if [ ${COMMAND} == "instalacion" ]
 	then
 		DIRLOG="conf/log"
 	else
