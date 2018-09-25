@@ -44,7 +44,7 @@ MENSAJECREACIONLOGDIR="Creacion del directorio de LOGS (${LOGDIR}):"
 #Primer parametro: directorio raiz a partir del cual se listaran los archivos y subdirectorios
 mostarEstructuraDeArchivosYDirectorios(){
 	find "$1" -mindepth 1 -printf '%P\n'	
-	find "$1" -mindepth 1 | ./glog InsPro "$1"
+	find "$1" -mindepth 1 | ./glog instalacion "$1"
 }
 
 
@@ -547,6 +547,13 @@ instalar(){
 	chmod +x "${BINDIR}/proceso.sh"
 	chmod +x "${BINDIR}/start"
 	chmod +x "${BINDIR}/stop"
+	
+	
+	rm -r "tmpGrupo02/arribos"
+	rm -r "tmpGrupo02/bin"
+	rm -r "tmpGrupo02/mae"
+	
+	mv "grupo02.tar.gz" "tmpGrupo02" 
 
 	actualizarConfiguracion
 }
