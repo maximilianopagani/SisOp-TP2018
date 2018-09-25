@@ -530,7 +530,7 @@ moverArchivosDeDirectorio(){
 
 
 MENSAJEINSTALACIONENCURSO="Creando Estructuras de directorio....."
-#instalacion de la aplicacion
+#Instalacion de la aplicacion
 instalar(){
 	mostrarHeader
 	echo "${MENSAJEINSTALACIONENCURSO}"
@@ -544,7 +544,7 @@ instalar(){
         moverArchivosDeDirectorio "${RUTAEJEMPLOS}" "${ARRIBOSDIR}"
 
 	chmod +x "${BINDIR}/init.sh"
-	chmod +x "${BINDIR}/procesoSisOp.sh"
+	chmod +x "${BINDIR}/proceso.sh"
 	chmod +x "${BINDIR}/start"
 	chmod +x "${BINDIR}/stop"
 
@@ -566,7 +566,7 @@ actualizarConfiguracion(){
 }
 
 
-#Utilizado por la funcion Verificar instalacion
+#Utilizado por la funcion Verificar Instalacion
 #Si el archivo de configuracion no tiene todos los directorios se considera corrupto.
 leerArchivoConf(){
 	GRUPODIR=""
@@ -615,7 +615,7 @@ MENSAJEINSTALACIONINCOMPLETALOG="Estado de la instalación: INCOMPLETA"
 MENSAJEINSTALACIONFALTANTES="Componentes faltantes: "
 MENSAJEINSTALACIONCOMPLETAR="Desea completar la instalación? (${GREEN}Si${NC} – ${RED}No${NC})"
 MENSAJEINSTALACIONCOMPLETARLOG="Consulta si Desea completar la instalación?"
-verificarinstalacionCompleta(){	
+verificarInstalacionCompleta(){	
 	leerArchivoConf
 	mostrarEstructuraDeArchivos
 
@@ -633,7 +633,7 @@ verificarinstalacionCompleta(){
 		chequearFaltantes "$RUTAARCHIVOSMAESTROSYTABLAS" "$MAEDIR"	
 		echo ''
 		mostrarMSJreparacion			
-		#confirmarCompletarinstalacion
+		#confirmarCompletarInstalacion
 	else
 		temp="$(chequearFaltantes "$RUTAMAESTROS" "$MAESTROSDIR")"
 		if [ ${#temp} -gt 0 ]; then
@@ -645,7 +645,7 @@ verificarinstalacionCompleta(){
 			chequearFaltantes "$RUTAMAESTROS" "$MAESTROSDIR"	
 			echo ''
 			mostrarMSJreparacion
-			#confirmarCompletarinstalacion
+			#confirmarCompletarInstalacion
 		else
 			if  [ -d "${CONFDIR}" ] && [  -d "${LOGDIR}" ] && [ -d "${BINDIR}" ] && [  -d "${MAESTROSDIR}" ] && [ -d "${ACEPTADOSDIR}" ]  && [  -d "${RECHAZADOSDIR}" ] && [  -d "${PROCESADOSDIR}" ] && [  -d "${SALIDADIR}" ] 
 				then
@@ -655,7 +655,7 @@ verificarinstalacionCompleta(){
 				echo "${MENSAJEINSTALACIONCANCELADA}"
 				./glog instalacion "${MENSAJEINSTALACIONCANCELADA}"
 				echo ''
-				#finalizarinstalacion
+				#finalizarInstalacion
 			else
 				
 				echo "Faltan directorios"				
@@ -775,8 +775,8 @@ then
 	#No usar esta funcion cuando se descomprime el paquete.
 	#CrearDirectoriosIniciales
 	mostrarHeader
-	echo 'Inicio de Ejecución de la instalacion'
-	./glog instalacion 'Inicio de Ejecución de la instalacion'
+	echo 'Inicio de Ejecución de la Instalacion'
+	./glog instalacion 'Inicio de Ejecución de la Instalacion'
 	echo ''
 	echo "Directorio predefinido de Configuración: ${CONFDIR}"
 	./glog instalacion "Directorio predefinido de Configuración: ${CONFDIR}"
@@ -787,7 +787,7 @@ then
 
 	if [ -f ${ARCHIVOCONF} ]
 	   then
-	   	verificarinstalacionCompleta
+	   	verificarInstalacionCompleta
    	else
 		ConsultasDirectorios
 		if [ ${OP} == "si" ]
@@ -795,7 +795,7 @@ then
 				instalar
 			else
 	 			echo "Cancelar instalacion"
-				./glog instalacion "Cancelar instalacion"
+				./glog instalacion "Cancelar Instalacion"
 		fi
 	fi
 fi

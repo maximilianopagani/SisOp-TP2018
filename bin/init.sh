@@ -11,86 +11,134 @@ RECHAZADOSDIR=""
 PROCESADOSDIR=""
 SALIDADIR=""
 
-fileExists=""
+fileExists="YES"
 checkIfFileExists()
 {
 	FILE=$1
-	if [ -f "$FILE" ]
+	if [ ! -f "$FILE" ]
 	then
-		fileExists="YES"
-	else
 		fileExists="NO"
 	fi
 }
 
-fileExecutable=""
+fileExecutable="YES"
 checkIfFileIsExecutable()
 {
 	FILE=$1
-	if [[ -x "$FILE" ]]
+	if [ ! -x "$FILE" ]
 	then
-		fileExecutable="YES"
-	else
 		fileExecutable="NO"
 	fi
+}
+
+fileReadable="YES"
+checkIfFileIsReadable()
+{
+	FILE=$1
+	if [ ! -r "$FILE" ]
+	then
+		fileReadable="NO"
+	fi
+}
+
+unsetVars()
+{
+	unset TP_SISOP_INIT
+	unset GRUPODIR
+	unset CONFDIR
+	unset LOGDIR
+	unset BINDIR
+	unset MAESTROSDIR
+	unset ARRIBOSDIR
+	unset ACEPTADOSDIR
+	unset RECHAZADOSDIR
+	unset PROCESADOSDIR
+	unset SALIDADIR
+}
+
+inicializacionAbortadaMsj()
+{
+	echo "====================== INICIALIZACION CANCELADA ======================"
+	./glog "init" "====================== INICIALIZACION CANCELADA ======================"
 }
 
 init() 
 {	
 	SCRIPTPATH="$( cd "$(dirname "$0")" ; cd .. ; pwd -P )" # A modificar cuando tengamos los scripts del principio
-	
-	INIT_SUCCESS=TRUE
-	VARCOUNT=0
-	FAILURE_REASON=""
+	LOGDIR="$SCRIPTPATH/conf/log"
+	export LOGDIR
+	chmod +x ./glog
+
+	echo "====================== INICIALIZANDO SISTEMA ======================"
+	./glog "init" "====================== INICIALIZANDO SISTEMA ======================"
 
 	if [ "$TP_SISOP_INIT" == "YES" ] #Variable que vendría de más arriba
 	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="Error: sistema ya inicializado."
-		echo "Error: sistema ya inicializado."
-		return 0
-	fi
-
-	# Verifico existencia con permiso de lectura del archivo de configuración
-
-	if [ ! -f "$SCRIPTPATH/conf/tpconfig.txt" ] 
-	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="Error: no existe el archivo de configuracion tpconfig.txt."
-		echo "Error: no existe el archivo de configuracion tpconfig.txt."
-		echo
+		echo "Verificando que el sistema no se encuentre ya inicializado... ERROR"
+		./glog "init" "Verificando que el sistema no se encuentre ya inicializado... ERROR" "ERROR"
+		inicializacionAbortadaMsj
 		return 0
 	else
-		if [ ! -r "$SCRIPTPATH/conf/tpconfig.txt" ]		
-		then
-			chmod +r "$SCRIPTPATH/conf/tpconfig.txt"
-			
-			if [ ! -r "$SCRIPTPATH/conf/tpconfig.txt" ]
-			then
-				INIT_SUCCESS=FALSE
-				FAILURE_REASON="Error: el archivo de configuracion tpconfig.txt no tiene permiso de lectura."
-				echo "Error: el archivo de configuracion tpconfig.txt no tiene permiso de lectura."
-				echo
-				return 0
-			fi
-		fi	
+		echo "Verificando que el sistema no se encuentre ya inicializado... OK"
+		./glog "init" "Verificando que el sistema no se encuentre ya inicializado... OK"
 	fi
 
-	echo "Inicializando sistema..."
+	###########################################################################
+	#      VERIFICAR QUE EXISTA TPCONFIG.TXT Y TENGA PERMISO DE LECTURA       #
+	###########################################################################
+
+	fileExists="YES"
+	checkIfFileExists "$SCRIPTPATH/conf/tpconfig.txt"
+	if [ "$fileExists" == "NO" ]
+	then
+		echo "Verificando existencia del archivo de configuración en $SCRIPTPATH/conf... ERROR"
+		./glog "init" "Verificando existencia del archivo de configuracion en $SCRIPTPATH/conf... ERROR" "ERROR"
+		inicializacionAbortadaMsj
+		return 0
+	else
+		echo "Verificando existencia del archivo de configuración en $SCRIPTPATH/conf... OK"
+		./glog "init" "Verificando existencia del archivo de configuracion en $SCRIPTPATH/conf... OK"
+
+		echo "Seteando permiso de lectura al archivo de configuración... OK"
+		./glog "init" "Seteando permiso de lectura al archivo de configuración... OK"
+
+		chmod +r "$SCRIPTPATH/conf/tpconfig.txt"
+
+		fileReadable="YES"
+		checkIfFileIsReadable "$SCRIPTPATH/conf/tpconfig.txt"
+		if [ "$fileReadable" == "NO" ]
+		then
+			echo "Verificando que el archivo de configuración tenga permisos de lectura... ERROR"
+			./glog "init" "Verificando que el archivo de configuración tenga permisos de lectura... ERROR" "ERROR"
+			inicializacionAbortadaMsj
+			return 0
+		else
+			echo "Verificando que el archivo de configuración tenga permisos de lectura... OK"
+			./glog "init" "Verificando que el archivo de configuración tenga permisos de lectura... OK"
+		fi
+	fi
+
+	###########################################################################
+	#               LEO VARIABLES DEL ARCHIVO DE CONFIGURACION                #
+	###########################################################################
+	
+	VARCOUNT=0
 
 	while read REGISTRO
 	do	
 		VARIABLE=$(cut -d'-' -f1 <<<$REGISTRO)
 		VALOR=$(cut -d'-' -f2 <<<$REGISTRO)
 
+		NOMBRECORRECTO="SI"
+
 		#ARCHIVOLOG="${GRUPODIR}/conf/log/instalacion.log"
 		#ARCHIVOCONF="${CONFDIR}/tpconfig.txt"
 
 		if [ ! -d "$VALOR" ]	
 		then
-			INIT_SUCCESS=FALSE
-			FAILURE_REASON="Error al cargar $VARIABLE. El directorio no existe ($VALOR)"
-			echo "Error al cargar $VARIABLE. El directorio no existe ($VALOR)"
+			echo "Cargando variable $VARIABLE y ruta $VALOR... ERROR - RUTA INEXISTENTE"
+			./glog "init" "Cargando variable $VARIABLE y ruta $VALOR... ERROR - RUTA INEXISTENTE" "ERROR"
+			ALLDIREXISTS="NO"
  		else
 			case $VARIABLE in
 				"GRUPODIR")
@@ -132,58 +180,91 @@ init()
 				"SALIDADIR")
 				SALIDADIR="$VALOR"
 				VARCOUNT=$((VARCOUNT+1))
+				;;
+				*)
+				NOMBRECORRECTO="NO"
 				;;		
 			esac
-
-			echo "Cargando: $VARIABLE - Valor: $VALOR"
+			
+			if [ "$NOMBRECORRECTO" == "NO" ]
+			then
+				echo "Cargando variable $VARIABLE y ruta $VALOR... ERROR - NOMBRE INCORRECTO"
+				./glog "init" "Cargando variable $VARIABLE y ruta $VALOR... ERROR - NOMBRE INCORRECTO" "ERROR"
+			else
+				echo "Cargando variable $VARIABLE y ruta $VALOR... OK"
+				./glog "init" "Cargando variable $VARIABLE y ruta $VALOR... OK"
+			fi
 		fi	
 
 	done <"$SCRIPTPATH/conf/tpconfig.txt"
 
+	###########################################################################
+	#      VERIFICAR LA EXISTENCIA DE TODOS LAS RUTAS DE LAS VARIABLES        #
+	###########################################################################
+
+	if [ "$ALLDIREXISTS" == "NO" ]
+	then
+		echo "Se han encontrado una o más rutas inexistentes para los directorios... ERROR"
+		./glog "init" "Se han encontrado una o más rutas inexistentes para los directorios... ERROR" "ERROR"
+		inicializacionAbortadaMsj
+		unsetVars
+		return 0
+	fi
+
+	###########################################################################
+	#     VERIFICAR LA CANTIDAD DE VARIABLES DE NOMBRES ESPERADOS LEIDAS      #
+	###########################################################################
+
 	if [ "$VARCOUNT" != "10" ]
 	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="Error: el archivo de configuracion está incompleto o mal configurado"
+		echo "Verificando cantidad esperada (10) y nombres de variables esperadas... ERROR"
+		./glog "init" "Verificando cantidad esperada (10) y nombres de variables esperadas... ERROR" "ERROR"
+		inicializacionAbortadaMsj
+		unsetVars
+		return 0
+	else
+		echo "Verificando cantidad esperada (10) y nombres de variables esperadas... OK"
+		./glog "init" "Verificando cantidad esperada (10) y nombres de variables esperadas... OK"
 	fi
 
-	# Verifico existencia con permiso de lectura de los archivos maestros
+	###########################################################################
+	#       VERIFICAR EXISTAN LOS MAESTROS Y TENGAN PERMISO DE LECTURA        #
+	###########################################################################
 
-	if [ ! -f "$MAESTROSDIR/Sucursales.txt" ]
+	fileExists="YES"
+	checkIfFileExists "$MAESTROSDIR/Sucursales.txt"
+	checkIfFileExists "$MAESTROSDIR/Operadores.txt"
+	if [ "$fileExists" == "NO" ]
 	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="Error: no existe el archivo de maestros Sucursales.txt."
-		echo "Error: no existe el archivo de maestros Sucursales.txt."
+		echo "Verificando existencia de los archivos maestros en $MAESTROSDIR... ERROR"
+		./glog "init" "Verificando existencia de los archivos maestros en $MAESTROSDIR... ERROR" "ERROR"
+		inicializacionAbortadaMsj
+		unsetVars
+		return 0
 	else
-		if [ ! -r "$MAESTROSDIR/Sucursales.txt" ]		
-		then
-			chmod +r "$MAESTROSDIR/Sucursales.txt"
-			
-			if [ ! -r "$MAESTROSDIR/Sucursales.txt" ]		
-			then
-				INIT_SUCCESS=FALSE
-				FAILURE_REASON="Error: el archivo de maestros Sucursales.txt no tiene permiso de lectura y no fué posible modificarlo"
-				echo "Error: el archivo de maestros Sucursales.txt no tiene permiso de lectura y no fué posible modificarlo"
-			fi
-		fi	
-	fi
+		echo "Verificando existencia de los archivos maestros en $MAESTROSDIR... OK"
+		./glog "init" "Verificando existencia de los archivos maestros en $MAESTROSDIR... OK"
 
-	if [ ! -f "$MAESTROSDIR/Operadores.txt" ]
-	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="Error: no existe el archivo de maestros Operadores.txt"
-		echo "Error: no existe el archivo de maestros Operadores.txt"
-	else
-		if [ ! -r "$MAESTROSDIR/Operadores.txt" ]	
+		echo "Seteando permisos de lectura a los archivos maestros... OK"
+		./glog "init" "Seteando permisos de lectura a los archivos maestros... OK"
+
+		chmod +r "$MAESTROSDIR/Operadores.txt"
+		chmod +r "$MAESTROSDIR/Sucursales.txt"
+
+		fileReadable="YES"
+		checkIfFileIsReadable "$MAESTROSDIR/Operadores.txt"
+		checkIfFileIsReadable "$MAESTROSDIR/Sucursales.txt"
+		if [ "$fileReadable" == "NO" ]
 		then
-			chmod +r "$MAESTROSDIR/Operadores.txt"
-			
-			if [ ! -r "$MAESTROSDIR/Operadores.txt" ]		
-			then
-				INIT_SUCCESS=FALSE
-				FAILURE_REASON="Error: el archivo de maestros Operadores.txt no tiene permiso de lectura y no fué posible modificarlo"
-				echo "Error: el archivo de maestros Operadores.txt no tiene permiso de lectura y no fué posible modificarlo"
-			fi
-		fi	
+			echo "Verificando que los archivos maestros tengan permiso de lectura... ERROR"
+			./glog "init" "Verificando que los archivos maestros tengan permiso de lectura... ERROR" "ERROR"
+			inicializacionAbortadaMsj
+			unsetVars
+			return 0
+		else
+			echo "Verificando que los archivos maestros tengan permiso de lectura... OK"
+			./glog "init" "Verificando que los archivos maestros tengan permiso de lectura... OK"
+		fi
 	fi
 
 	###########################################################################
@@ -195,18 +276,27 @@ init()
 	checkIfFileExists "$BINDIR/glog"
 	checkIfFileExists "$BINDIR/start"
 	checkIfFileExists "$BINDIR/stop"
-	checkIfFileExists "$BINDIR/procesoSisOp.sh"
+	checkIfFileExists "$BINDIR/proceso.sh"
 	checkIfFileExists "$BINDIR/instalacion.sh"
 	if [ "$fileExists" == "NO" ]
 	then
-		INIT_SUCCESS=FALSE
-		FAILURE_REASON="No se pueden encontrar uno o más ejecutables de $DIRBIN"
+		echo "Verificando existencia de los archivos ejecutables en $BINDIR... ERROR"
+		./glog "init" "Verificando existencia de los archivos ejecutables en $BINDIR... ERROR" "ERROR"
+		inicializacionAbortadaMsj
+		unsetVars
+		return 0
 	else
+		echo "Verificando existencia de los archivos ejecutables en $BINDIR... OK"
+		./glog "init" "Verificando existencia de los archivos ejecutables en $BINDIR... OK"
+
+		echo "Seteando permisos de ejecución a los archivos ejecutables... OK"
+		./glog "init" "Seteando permisos de ejecución a los archivos ejecutables... OK"
+
 		chmod +x "$BINDIR/mover"
 		chmod +x "$BINDIR/glog"
 		chmod +x "$BINDIR/start"
 		chmod +x "$BINDIR/stop"
-		chmod +x "$BINDIR/procesoSisOp.sh"
+		chmod +x "$BINDIR/proceso.sh"
 		chmod +x "$BINDIR/instalacion.sh"
 
 		fileExecutable="YES"
@@ -214,58 +304,44 @@ init()
 		checkIfFileIsExecutable "$BINDIR/glog"
 		checkIfFileIsExecutable "$BINDIR/start"
 		checkIfFileIsExecutable "$BINDIR/stop"
-		checkIfFileIsExecutable "$BINDIR/procesoSisOp.sh"
+		checkIfFileIsExecutable "$BINDIR/proceso.sh"
 		checkIfFileIsExecutable "$BINDIR/instalacion.sh"
 		if [ "$fileExecutable" == "NO" ]
 		then
-			INIT_SUCCESS=FALSE
-			FAILURE_REASON="Uno o más ejecutables de $DIRBIN no tienen permiso de ejecución y no es posible modificarlo"
+			echo "Verificando que los archivos ejecutables tengan permiso de ejecución... ERROR"
+			./glog "init" "Verificando que los archivos ejecutables tengan permiso de ejecución... ERROR" "ERROR"
+			inicializacionAbortadaMsj
+			unsetVars
+			return 0
+		else
+			echo "Verificando que los archivos ejecutables tengan permiso de ejecución... OK"
+			./glog "init" "Verificando que los archivos ejecutables tengan permiso de ejecución... OK"		
 		fi
 	fi
 
 	###########################################################################
+	#         VERIFICACIONES CORRECTAS - TERMINAR LA INICIALIZACION           #
+	###########################################################################
 
-	if [ "$INIT_SUCCESS" = "TRUE" ]
-	then	
-		TP_SISOP_INIT=YES
+	TP_SISOP_INIT=YES
 
-		export TP_SISOP_INIT
-		export GRUPODIR
-		export CONFDIR
-		export LOGDIR
-		export LOGSIZE
-		export BINDIR
-		export MAESTROSDIR
-		export ARRIBOSDIR
-		export ACEPTADOSDIR
-		export RECHAZADOSDIR
-		export PROCESADOSDIR
-		export SALIDADIR
+	export TP_SISOP_INIT
+	export GRUPODIR
+	export CONFDIR
+	export LOGDIR
+	export BINDIR
+	export MAESTROSDIR
+	export ARRIBOSDIR
+	export ACEPTADOSDIR
+	export RECHAZADOSDIR
+	export PROCESADOSDIR
+	export SALIDADIR
 
-		echo "Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano"
-		"$BINDIR"/start
-		
-		return 1
-	else
-
-		unset TP_SISOP_INIT
-		unset GRUPODIR
-		unset CONFDIR
-		unset LOGDIR
-		unset LOGSIZE
-		unset BINDIR
-		unset MAESTROSDIR
-		unset ARRIBOSDIR
-		unset ACEPTADOSDIR
-		unset RECHAZADOSDIR
-		unset PROCESADOSDIR
-		unset SALIDADIR
-
-		echo "Error al inicializar el sistema. Motivo: $FAILURE_REASON"
-		return 0
-	fi
+	echo "Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano"
+	./glog "init" "Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano"		
+	echo "====================== INICIALIZACION COMPLETADA CON EXITO ======================"
+	./glog "init" "====================== INICIALIZACION COMPLETADA CON EXITO ======================"
+	"$BINDIR"/start
 }
-
-chmod +x ./glog
 
 init

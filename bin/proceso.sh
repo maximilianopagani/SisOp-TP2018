@@ -64,6 +64,9 @@ verificarTrailer()
 	IFS_BACKUP=$IFS 
 	IFS=$'\n'
 
+	TRAILER=""
+	Q_REGISTROS=""
+
 	for registro in $( cat $file )
 	do
 		COD_POSTAL=`echo $registro | cut -d ";" -f6`
@@ -81,9 +84,9 @@ verificarTrailer()
 
 	IFS=$IFS_BACKUP
 
-	if [ "$SUM_COD_POSTAL" != "$TRAILER" ] || [ "$CONTADOR" != "$Q_REGISTROS" ]
+	if [ "$SUM_COD_POSTAL" != "$TRAILER" ] || [ "$CONTADOR" != "$Q_REGISTROS" ] || [ "$TRAILER" == "" ] || [ "$Q_REGISTROS" == "" ]
 	then
-		#echo "Verificando cantidad de registros y suma de códigos postales con con el trailer... ERROR, NO COINCIDE"
+		#echo "Verificando cantidad de registros y suma de códigos postales con con el trailer... ERROR, NO COINCIDE / NO EXISTE EL TRAILER"
 		return 0
 	else
 		#echo "Verificando cantidad de registros y suma de códigos postales con con el trailer... OK"
@@ -226,16 +229,16 @@ removerEspaciosADerecha()
 ######################################################################################################
 
 main()
-{
+{	
 	if [ "$TP_SISOP_INIT" != "YES" ] #Variable que vendría de más arriba
 	then
 		#echo "============ [ERROR] No se puede ejecutar el proceso debido a que el sistema no se encuentra inicializado ============"
-		./glog "procesoSisOp" "============ [ERROR] No se puede ejecutar el proceso ya que el sistema no se encuentra inicializado ============" "ERROR"
+		./glog "proceso" "============ [ERROR] No se puede ejecutar el proceso ya que el sistema no se encuentra inicializado ============" "ERROR"
 		return 0
 	fi
 
 	#echo "======================== INICIANDO PROCESO. DIRECTORIO A BUSCAR NOVEDADES: $ARRIBOSDIR ========================"
-	./glog "procesoSisOp" "======================== INICIANDO PROCESO. DIRECTORIO A BUSCAR NOVEDADES: $ARRIBOSDIR ========================"
+	./glog "proceso" "======================== INICIANDO PROCESO. DIRECTORIO A BUSCAR NOVEDADES: $ARRIBOSDIR ========================"
 
 	TP_SISOP_CICLO=0
 
@@ -244,17 +247,17 @@ main()
 		TP_SISOP_CICLO=$((TP_SISOP_CICLO+1))
 		
 		#echo "======================== SE INICIA CICLO DE PROCESAMIENTO NRO $TP_SISOP_CICLO ========================"
-		./glog "procesoSisOp" "======================== SE INICIA CICLO DE PROCESAMIENTO NRO $TP_SISOP_CICLO ========================"
+		./glog "proceso" "======================== SE INICIA CICLO DE PROCESAMIENTO NRO $TP_SISOP_CICLO ========================"
 
 		#################### Procesamiento de ARRIBOS ####################
 
 		if [ -z "$(ls -A $ARRIBOSDIR)" ] # Si el directorio está vacío
 		then
 			#echo "===================      NO HAY NOVEDADES PARA PROCESAR      ==================="
-			./glog "procesoSisOp" "=======================      NO HAY NOVEDADES PARA PROCESAR      ======================="
+			./glog "proceso" "=======================      NO HAY NOVEDADES PARA PROCESAR      ======================="
 		else
 			#echo "=======================      VERIFICANDO ARCHIVOS ARRIBADOS      ======================="
-			./glog "procesoSisOp" "=======================      VERIFICANDO ARCHIVOS ARRIBADOS      ======================="
+			./glog "proceso" "=======================      VERIFICANDO ARCHIVOS ARRIBADOS      ======================="
 
 			for FILEARRIBO in "$ARRIBOSDIR"/*
 			do
@@ -326,12 +329,12 @@ main()
 				if [ "$ARCHIVOACEPTADO" == "0" ]
 				then	
 					#echo "Archivo $FILENAME RECHAZADO. Motivo: $MOTIVORECHAZO"
-					./glog "procesoSisOp" "=== $FILENAME === Archivo RECHAZADO. Motivo: $MOTIVORECHAZO"
+					./glog "proceso" "=== $FILENAME === Archivo RECHAZADO. Motivo: $MOTIVORECHAZO"
 					mv -u "$FILEARRIBO" "$RECHAZADOSDIR"
 					#./mover "$FILEARRIBO" "$RECHAZADOSDIR"
 				else
 					#echo "Verificación de archivo $FILENAME OK. Se mueve al directorio de aceptados"
-					./glog "procesoSisOp" "=== $FILENAME === Verificación de archivo OK. Se mueve al directorio de aceptados"
+					./glog "proceso" "=== $FILENAME === Verificación de archivo OK. Se mueve al directorio de aceptados"
 					mv -u "$FILEARRIBO" "$ACEPTADOSDIR"
 					#./mover "$FILEARRIBO" "$ACEPTADOSDIR"						
 				fi
@@ -345,7 +348,7 @@ main()
 		if [ "$(ls -A $ACEPTADOSDIR)" ] # Si el directorio no está vacío
 		then
 			#echo "=======================      PROCESANDO ARCHIVOS ACEPTADOS      ======================="
-			./glog "procesoSisOp" "=======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================"
+			./glog "proceso" "=======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================"
 
 			for FILEACEPTADO in "$ACEPTADOSDIR"/*
 			do
@@ -357,14 +360,14 @@ main()
 				verificarTrailer "$FILEACEPTADO"
 				if [ "$?" == "0" ]
 				then
-					#echo "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros"
-					./glog "procesoSisOp" "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros"
+					#echo "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer"
+					./glog "proceso" "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer"
 					mv -u "$FILEACEPTADO" "$RECHAZADOSDIR"
 					#./mover "$FILEACEPTADO" "$RECHAZADOSDIR"	
 				else
 					# Trailer OK, procedemos a grabar en log y procesar los registros
 					#echo "=== $FILENAME === Verificación del trailer OK. Se procede a analizar los registros"
-					./glog "procesoSisOp" "=== $FILENAME === Verificación del trailer OK. Se procede a analizar los registros"
+					./glog "proceso" "=== $FILENAME === Verificación del trailer OK. Se procede a analizar los registros"
 
 					while read REGISTRO
 					do
@@ -417,7 +420,7 @@ main()
 							then
 								#echo "Registro RECHAZADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA - Motivo: $MOTIVORECHAZO"
 								echo "$REGISTRO;$MOTIVORECHAZO;$FILENAME">>"$RECHAZADOSDIR/Entregas_Rechazadas"
-								./glog "procesoSisOp" "Registro RECHAZADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA - Motivo: $MOTIVORECHAZO"
+								./glog "proceso" "Registro RECHAZADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA - Motivo: $MOTIVORECHAZO"
 							else
 								NROPIEZA=$(cut -d';' -f2 <<<$REGISTRO)
 								NOMBREYAPELLIDO=$(cut -d';' -f3 <<<$REGISTRO)
@@ -455,7 +458,7 @@ main()
 
 								#echo "Registro ACEPTADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA"
 								echo "$NROPIEZA""$NOMBREYAPELLIDO""$TIPODOC""$DOCUMENTO""$CODIGOPOSTAL""$CODIGOSUCURSAL""$NOMBRESUCURSAL""$DIRECCIONSUCURSAL""$PRECIOSUCURSAL""$FILENAME">>"$SALIDADIR/Entregas_$OPERADOR"
-								./glog "procesoSisOp" "Registro ACEPTADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA"					
+								./glog "proceso" "Registro ACEPTADO. Operador: $OPERADOR - Código Postal: $CODIGOPOSTAL - Nro Pieza: $NROPIEZA"					
 							fi
 						fi
 
@@ -470,9 +473,6 @@ main()
 	done
 	return 1
 }
-
-chmod +x ./mover
-chmod +x ./glog
 
 main
 

@@ -6,7 +6,7 @@ MSG="$2"
 MAXSIZE=$LOGSIZE
 
 if [ "$MAXSIZE" == "" ]; then
-    MAXSIZE=500000 
+    MAXSIZE=5000000 
 fi
 
 if [ -z $3 ]; then
