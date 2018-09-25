@@ -549,9 +549,9 @@ instalar(){
 	chmod +x "${BINDIR}/stop"
 	
 	
-	rm -r "tmpGrupo02/arribos"
-	rm -r "tmpGrupo02/bin"
-	rm -r "tmpGrupo02/mae"
+	rm -r "./tmpGrupo02/arribos"
+	rm -r "./tmpGrupo02/bin"
+	rm -r "./tmpGrupo02/mae"
 	
 	mv "grupo02.tar.gz" "tmpGrupo02" 
 
