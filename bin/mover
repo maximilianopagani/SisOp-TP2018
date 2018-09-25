@@ -33,7 +33,7 @@ fi
 
 #MUEVO ARCHIVO
 if [ ! -f "${MOV_DST}/${NAME_FILE}" ]; then
-	cp "$MOV_FILE" "$MOV_DST"
+	mv "$MOV_FILE" "$MOV_DST"
 	MESSAGE="El archivo ${MOV_FILE} ha sido ubicado en el directorio ${MOV_DST}"
 else 
 	if [ ! -d "$DIR_DUP" ]; then
@@ -56,6 +56,6 @@ else
 	# Agrego secuencia valida para el archivo duplicado
 	NEWFILE="${DIR_DUP}/${NAME_FILE}_${SECUENCIA}"
 
-	cp "$MOV_FILE" "$NEWFILE" #ver si se puede pasar los duplicados en subdirectorios...
+	mv "$MOV_FILE" "$NEWFILE" #ver si se puede pasar los duplicados en subdirectorios...
 fi
 exit 0
