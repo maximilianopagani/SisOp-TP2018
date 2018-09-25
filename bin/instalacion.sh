@@ -553,11 +553,13 @@ instalar(){
 	rm -r "./sourcefiles/bin"
 	rm -r "./sourcefiles/mae"
 	
-	mv "grupo02.tar.gz" "tmpGrupo02" 
+	mv "grupo02.tar.gz" "sourcefiles" 
 	
 	rm "instalacion.sh"
 	rm "mover.sh"
 	mv "glog.sh" "$BINDIR"
+	
+	mv "readme" "sourcefiles"
 
 	actualizarConfiguracion
 }
