@@ -1,0 +1,34 @@
+2018-09-25_16:21:02 - maximiliano - instalacion - INFO - Inicio de Ejecución de la Instalacion
+2018-09-25_16:21:02 - maximiliano - instalacion - INFO - Directorio predefinido de Configuración: /home/maximiliano/Downloads/grupo02/conf
+2018-09-25_16:21:02 - maximiliano - instalacion - INFO - Directorio predefinido para los Log: /home/maximiliano/Downloads/grupo02/conf/log/instalacion.log
+2018-09-25_16:21:02 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los ejecutables, por defecto: /home/maximiliano/Downloads/grupo02/bin).
+2018-09-25_16:21:04 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los maestros, por defecto: /home/maximiliano/Downloads/grupo02/maestros).
+2018-09-25_16:21:09 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los arribos, por defecto: /home/maximiliano/Downloads/grupo02/arribos).
+2018-09-25_16:21:11 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los aceptados, por defecto: /home/maximiliano/Downloads/grupo02/aceptados).
+2018-09-25_16:21:11 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los rechazados, por defecto: /home/maximiliano/Downloads/grupo02/rechazados).
+2018-09-25_16:21:15 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los procesados, por defecto: /home/maximiliano/Downloads/grupo02/procesados).
+2018-09-25_16:21:19 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los salida, por defecto: /home/maximiliano/Downloads/grupo02/salida).
+2018-09-25_16:21:21 - maximiliano - instalacion - INFO - Consulta si Desea completar la instalación?
+2018-09-25_16:21:22 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los ejecutables, por defecto: /home/maximiliano/Downloads/grupo02/bin).
+2018-09-25_16:21:29 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los maestros, por defecto: /home/maximiliano/Downloads/grupo02/dirdemaestros).
+2018-09-25_16:21:39 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los externos, por defecto: /home/maximiliano/Downloads/grupo02/arribos).
+2018-09-25_16:21:50 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los externos, por defecto: /home/maximiliano/Downloads/grupo02/arribos).
+2018-09-25_16:21:54 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los aceptados, por defecto: /home/maximiliano/Downloads/grupo02/aceptados).
+2018-09-25_16:21:55 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los rechazados, por defecto: /home/maximiliano/Downloads/grupo02/dirderechazados).
+2018-09-25_16:22:10 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los procesados, por defecto: /home/maximiliano/Downloads/grupo02/dirdeprocesados).
+2018-09-25_16:22:46 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los salida, por defecto: /home/maximiliano/Downloads/grupo02/salida).
+2018-09-25_16:22:53 - maximiliano - instalacion - INFO - Consulta si Desea completar la instalación?
+2018-09-25_16:22:55 - maximiliano - instalacion - INFO - Cancelar Instalacion
+2018-09-25_16:23:04 - maximiliano - instalacion - INFO - Inicio de Ejecución de la Instalacion
+2018-09-25_16:23:04 - maximiliano - instalacion - INFO - Directorio predefinido de Configuración: /home/maximiliano/Downloads/grupo02/conf
+2018-09-25_16:23:04 - maximiliano - instalacion - INFO - Directorio predefinido para los Log: /home/maximiliano/Downloads/grupo02/conf/log/instalacion.log
+2018-09-25_16:23:04 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los ejecutables, por defecto: /home/maximiliano/Downloads/grupo02/bin).
+2018-09-25_16:23:08 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los maestros, por defecto: /home/maximiliano/Downloads/grupo02/maestros).
+2018-09-25_16:23:14 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los arribos, por defecto: /home/maximiliano/Downloads/grupo02/arribos).
+2018-09-25_16:23:15 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los aceptados, por defecto: /home/maximiliano/Downloads/grupo02/aceptados).
+2018-09-25_16:23:15 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los rechazados, por defecto: /home/maximiliano/Downloads/grupo02/rechazados).
+2018-09-25_16:23:15 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los procesados, por defecto: /home/maximiliano/Downloads/grupo02/procesados).
+2018-09-25_16:23:15 - maximiliano - instalacion - INFO - Consulta al usuario el directorio de instalación de los salida, por defecto: /home/maximiliano/Downloads/grupo02/salida).
+2018-09-25_16:23:16 - maximiliano - instalacion - INFO - Consulta si Desea completar la instalación?
+2018-09-25_16:23:17 - maximiliano - instalacion - INFO - Creando Estructuras de directorio.....\n
+2018-09-25_16:23:17 - maximiliano - instalacion - INFO - Creando Estructuras de directorio.....
