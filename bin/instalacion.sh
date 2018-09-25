@@ -559,7 +559,7 @@ instalar(){
 	rm "mover"
 	rm "glog" 
 	
-	mv "README" "sourcefiles"
+	mv "README.md" "sourcefiles"
 
 	actualizarConfiguracion
 }
