@@ -6,7 +6,7 @@ OP=""
 COMANDO=$0
 
 #Constantes de instalacion
-RUTAPAQUETE=$(pwd)'/paquete_sisop_grupo02.tar.gz'
+RUTAPAQUETE=$(pwd)'/grupo02.tar.gz'
 RUTADATOS=$(pwd)'/sourcefiles'
 
 RUTAARCHIVOSMAESTROSYTABLAS=${RUTADATOS}'/mae'	
@@ -553,14 +553,7 @@ instalar(){
 	rm -r "./sourcefiles/bin"
 	rm -r "./sourcefiles/mae"
 	
-	mv "grupo02.tar.gz" "sourcefiles" 
-	
-	rm "instalacion.sh"
-	rm "mover"
-	rm "glog" 
-	
-	mv "README.md" "sourcefiles"
-
+	mv "grupo02.tar.gz" "sourcefiles"
 	actualizarConfiguracion
 }
 
