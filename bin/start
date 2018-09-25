@@ -9,9 +9,10 @@ then
 		echo "============ [START] [ERROR] proceso.sh ya se encuentra en ejecución ============"
 		"$BINDIR"/glog "start" "No se pudo invocar el comando debido a que proceso.sh ya se encuentra en ejecución" "ERROR"		
 	else
-		echo "============ [START] Invocación de comando correcta. Se inicia proceso.sh ============"
-		"$BINDIR"/glog "start" "Se invoca el comando correctamente. Se inicia proceso.sh"
 		"$BINDIR"/proceso.sh &
+		PID=$(ps | grep "proceso.sh" | cut -d' ' -f1)
+		echo "============ [START] Invocación de comando correcta. Se inicia proceso.sh. ID:$PID ============"
+		"$BINDIR"/glog "start" "Se invoca el comando correctamente. Se inicia proceso.sh. ID:$PID"
 	fi
 else
 	echo "============ [START] [ERROR] No se puede invocar el comando ya que el sistema no se encuentra inicializado ============"

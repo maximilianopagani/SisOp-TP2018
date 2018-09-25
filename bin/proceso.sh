@@ -330,12 +330,12 @@ main()
 				then	
 					#echo "Archivo $FILENAME RECHAZADO. Motivo: $MOTIVORECHAZO"
 					./glog "proceso" "=== $FILENAME === Archivo RECHAZADO. Motivo: $MOTIVORECHAZO"
-					mv -u "$FILEARRIBO" "$RECHAZADOSDIR"
+					mv -f "$FILEARRIBO" "$RECHAZADOSDIR"
 					#./mover "$FILEARRIBO" "$RECHAZADOSDIR"
 				else
 					#echo "Verificación de archivo $FILENAME OK. Se mueve al directorio de aceptados"
 					./glog "proceso" "=== $FILENAME === Verificación de archivo OK. Se mueve al directorio de aceptados"
-					mv -u "$FILEARRIBO" "$ACEPTADOSDIR"
+					mv -f "$FILEARRIBO" "$ACEPTADOSDIR"
 					#./mover "$FILEARRIBO" "$ACEPTADOSDIR"						
 				fi
 			done
@@ -362,7 +362,7 @@ main()
 				then
 					#echo "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer"
 					./glog "proceso" "=== $FILENAME === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer"
-					mv -u "$FILEACEPTADO" "$RECHAZADOSDIR"
+					mv -f "$FILEACEPTADO" "$RECHAZADOSDIR"
 					#./mover "$FILEACEPTADO" "$RECHAZADOSDIR"	
 				else
 					# Trailer OK, procedemos a grabar en log y procesar los registros
@@ -464,7 +464,7 @@ main()
 
 					done <$FILEACEPTADO
 				
-					mv -u "$FILEACEPTADO" "$PROCESADOSDIR"
+					mv -f "$FILEACEPTADO" "$PROCESADOSDIR"
 					#./mover "$FILEACEPTADO" "$PROCESADOSDIR"
 				fi
 			done

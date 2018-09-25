@@ -123,6 +123,7 @@ init()
 	###########################################################################
 	
 	VARCOUNT=0
+	ALLDIREXISTS="YES"
 
 	while read REGISTRO
 	do	
@@ -130,9 +131,6 @@ init()
 		VALOR=$(cut -d'-' -f2 <<<$REGISTRO)
 
 		NOMBRECORRECTO="SI"
-
-		#ARCHIVOLOG="${GRUPODIR}/conf/log/instalacion.log"
-		#ARCHIVOCONF="${CONFDIR}/tpconfig.txt"
 
 		if [ ! -d "$VALOR" ]	
 		then
@@ -277,7 +275,6 @@ init()
 	checkIfFileExists "$BINDIR/start"
 	checkIfFileExists "$BINDIR/stop"
 	checkIfFileExists "$BINDIR/proceso.sh"
-	checkIfFileExists "$BINDIR/instalacion.sh"
 	if [ "$fileExists" == "NO" ]
 	then
 		echo "Verificando existencia de los archivos ejecutables en $BINDIR... ERROR"
@@ -297,7 +294,6 @@ init()
 		chmod +x "$BINDIR/start"
 		chmod +x "$BINDIR/stop"
 		chmod +x "$BINDIR/proceso.sh"
-		chmod +x "$BINDIR/instalacion.sh"
 
 		fileExecutable="YES"
 		checkIfFileIsExecutable "$BINDIR/mover"
@@ -305,7 +301,6 @@ init()
 		checkIfFileIsExecutable "$BINDIR/start"
 		checkIfFileIsExecutable "$BINDIR/stop"
 		checkIfFileIsExecutable "$BINDIR/proceso.sh"
-		checkIfFileIsExecutable "$BINDIR/instalacion.sh"
 		if [ "$fileExecutable" == "NO" ]
 		then
 			echo "Verificando que los archivos ejecutables tengan permiso de ejecución... ERROR"
@@ -341,7 +336,21 @@ init()
 	./glog "init" "Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano"		
 	echo "====================== INICIALIZACION COMPLETADA CON EXITO ======================"
 	./glog "init" "====================== INICIALIZACION COMPLETADA CON EXITO ======================"
-	"$BINDIR"/start
-}
 
+	###################3INICIO DEL PROCESO
+	ps cax | grep "proceso.sh" > /dev/null
+
+	if [ $? -eq 0 ]; 
+	then
+		echo "============ [ERROR] proceso.sh ya se encuentra en ejecución ============"
+		"$BINDIR"/glog "init" "No se pudo invocar el comando debido a que proceso.sh ya se encuentra en ejecución" "ERROR"		
+	else
+		"$BINDIR"/proceso.sh &
+
+		PID=$(ps | grep "proceso.sh" | cut -d' ' -f1)
+		echo "============ Se inicia proceso.sh ID:$PID============"
+		./glog "init" "============ Se inicia proceso.sh ID:$PID============"						
+	fi
+
+}
 init

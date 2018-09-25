@@ -1,0 +1,7 @@
+AND;3801228;RUANO GERARDO;DU ;34899181;1408;No existe una sucursal con ese CP en el maestro de sucursales;Entregas_05.txt
+FAS;3804562;RUARTE               RUBEN ;CI;44123987;1408;No existe una sucursal con ese CP en el maestro de sucursales;Entregas_05.txt
+AND;6003444711136;WAITOLLER                MARIO;DU ;57803661;2300;Falla en la verificación de vigencia del contrato con ese operador;Entregas_07.txt
+AND;5417970;ZEIDA        EDITH;DU ;51989916;6620;Falla en la verificación de vigencia del contrato con ese operador;Entregas_07.txt
+FAR;6003444644413;TASSARA RAMIRO;CI;57802755;3560;No existe ese operador en el maestro de operadores;Entregas_02.txt
+CAR;6003444666654;              TEUBER ALEJANDRO;LC;57803057;6300;Falla en la verificación de vigencia del contrato con ese operador;Entregas_02.txt
+OCA;6003444666654;              TEUBER ALEJANDRO;LC;57803057;1000;No existe una sucursal con ese CP en el maestro de sucursales;Entregas_02.txt

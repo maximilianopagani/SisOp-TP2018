@@ -1,0 +1,167 @@
+2018-09-24_20:27:57 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando cantidad y nombres de variables esperadas... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando existencia de los archivos maestros en /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Seteando permisos de lectura a los archivos maestros... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando que los archivos maestros tengan permiso de lectura... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando existencia de los archivos ejecutables en /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Seteando permisos de ejecución a los archivos ejecutables... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Verificando que los archivos ejecutables tengan permiso de ejecución... OK
+2018-09-24_20:27:57 - maximiliano - init - INFO - Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano
+2018-09-24_20:27:57 - maximiliano - init - INFO - ====================== INICIALIZACION COMPLETADA CON EXITO ======================
+2018-09-24_20:28:50 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:28:50 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:28:50 - maximiliano - init - ERROR - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... ERROR
+2018-09-24_20:28:50 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:32:48 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:32:48 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:32:48 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:32:48 - maximiliano - init - ERROR - Cargando variable ARRIBOSDIRRRRRR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... ERROR - NOMBRE INCORRECTO
+2018-09-24_20:32:48 - maximiliano - init - ERROR - Verificando cantidad y nombres de variables esperadas... ERROR
+2018-09-24_20:32:48 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:35:18 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:35:18 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:35:18 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:35:18 - maximiliano - init - ERROR - Verificando cantidad esperada (10) y nombres de variables esperadas... ERROR
+2018-09-24_20:35:18 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:35:41 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:35:41 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:35:41 - maximiliano - init - ERROR - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salidaaaa... ERROR - RUTA INEXISTENTE
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:35:41 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:35:41 - maximiliano - init - ERROR - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribossss... ERROR - RUTA INEXISTENTE
+2018-09-24_20:35:41 - maximiliano - init - ERROR - Se han encontrado una o más rutas inexistentes para los directorios... ERROR
+2018-09-24_20:35:41 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:36:43 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:36:43 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:36:43 - maximiliano - init - INFO - Verificando cantidad esperada (10) y nombres de variables esperadas... OK
+2018-09-24_20:36:43 - maximiliano - init - ERROR - Verificando existencia de los archivos maestros en /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... ERROR
+2018-09-24_20:36:44 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:41:06 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:41:06 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:41:06 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:41:06 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:41:06 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Verificando cantidad esperada (10) y nombres de variables esperadas... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Verificando existencia de los archivos maestros en /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Seteando permisos de lectura a los archivos maestros... OK
+2018-09-24_20:41:07 - maximiliano - init - INFO - Verificando que los archivos maestros tengan permiso de lectura... OK
+2018-09-24_20:41:07 - maximiliano - init - ERROR - Verificando existencia de los archivos ejecutables en /home/maximiliano/SisOp/TP/Grupo02MIO/bin... ERROR
+2018-09-24_20:41:07 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:43:34 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando cantidad esperada (10) y nombres de variables esperadas... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando existencia de los archivos maestros en /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Seteando permisos de lectura a los archivos maestros... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando que los archivos maestros tengan permiso de lectura... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Verificando existencia de los archivos ejecutables en /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:43:34 - maximiliano - init - INFO - Seteando permisos de ejecución a los archivos ejecutables... OK
+2018-09-24_20:43:34 - maximiliano - init - ERROR - Verificando que los archivos ejecutables tengan permiso de ejecución... ERROR
+2018-09-24_20:43:34 - maximiliano - init - INFO - ====================== INICIALIZACION CANCELADA ======================
+2018-09-24_20:44:01 - maximiliano - init - INFO - ====================== INICIALIZANDO SISTEMA ======================
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando que el sistema no se encuentre ya inicializado... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando existencia del archivo de configuracion en /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Seteando permiso de lectura al archivo de configuración... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando que el archivo de configuración tenga permisos de lectura... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable GRUPODIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable CONFDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable LOGDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/conf/log... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable BINDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable SALIDADIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/salida... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable MAESTROSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable PROCESADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/procesados... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable RECHAZADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/rechazados... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable ACEPTADOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/aceptados... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Cargando variable ARRIBOSDIR y ruta /home/maximiliano/SisOp/TP/Grupo02MIO/arribos... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando cantidad esperada (10) y nombres de variables esperadas... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando existencia de los archivos maestros en /home/maximiliano/SisOp/TP/Grupo02MIO/maestros... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Seteando permisos de lectura a los archivos maestros... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando que los archivos maestros tengan permiso de lectura... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando existencia de los archivos ejecutables en /home/maximiliano/SisOp/TP/Grupo02MIO/bin... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Seteando permisos de ejecución a los archivos ejecutables... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Verificando que los archivos ejecutables tengan permiso de ejecución... OK
+2018-09-24_20:44:01 - maximiliano - init - INFO - Sistema inicializado con éxito. Se procede con la invocación del comando start para iniciar el proceso en segundo plano
+2018-09-24_20:44:01 - maximiliano - init - INFO - ====================== INICIALIZACION COMPLETADA CON EXITO ======================

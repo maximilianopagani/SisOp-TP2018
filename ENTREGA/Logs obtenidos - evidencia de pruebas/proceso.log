@@ -1,0 +1,172 @@
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - ======================== INICIANDO PROCESO. DIRECTORIO A BUSCAR NOVEDADES: /home/maximiliano/SisOp/TP/Grupo02MIO/arribos ========================
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 1 ========================
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Enntregas_04.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entergas_01.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_001.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_00.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas-01.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_02.txt === Archivo RECHAZADO. Motivo: El archivo está vacio
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_03.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_0404.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_04.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas04.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_05.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_06.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_07.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_08.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === entregas_11.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_11.txt === Archivo RECHAZADO. Motivo: El archivo es de un mes posterior al actual
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_12.txt === Archivo RECHAZADO. Motivo: El archivo es de un mes posterior al actual
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_13.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === Entregas_14.txt === Archivo RECHAZADO. Motivo: El archivo posee un nombre distinto al estandar esperado (Entregas_XX)
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === ValidarArchivoVacio === Archivo RECHAZADO. Motivo: El archivo está vacio
+2018-09-24_22:27:52 - maximiliano - proceso - INFO - === ValidarExtension === Archivo RECHAZADO. Motivo: El archivo no posee extension .txt
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - =======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - === Entregas_03.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000003784558
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 1141 - Nro Pieza: 00000000000000126457
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000003797894
+2018-09-24_22:27:57 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 1427 - Nro Pieza: 00000000000000136459
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000000000000256464
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 1427 - Nro Pieza: 00000000000000123123
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000000000000129791
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000006003443265471
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6620 - Nro Pieza: 00000006003443287712
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7100 - Nro Pieza: 00000006003443309953
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000006003443332194
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2701 - Nro Pieza: 00000006003443354435
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6740 - Nro Pieza: 00000006003443376676
+2018-09-24_22:27:58 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7100 - Nro Pieza: 00000006003443398917
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - === Entregas_04.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000006003443777014
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003443799255
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 3260 - Nro Pieza: 00000006003443821496
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003443843737
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000006003443865978
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003443888219
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 3260 - Nro Pieza: 00000006003443910460
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003443932701
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1838 - Nro Pieza: 00000006003443954942
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003443977183
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 1427 - Nro Pieza: 00000000000000263132
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 1141 - Nro Pieza: 00000000000003777890
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000000000003781224
+2018-09-24_22:27:59 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6360 - Nro Pieza: 00000006003443999424
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003444021665
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1838 - Nro Pieza: 00000006003444043906
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003444066147
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6360 - Nro Pieza: 00000006003444088388
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003444110629
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 1427 - Nro Pieza: 00000000000003787892
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 1141 - Nro Pieza: 00000000000003791226
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000000000003794560
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1827 - Nro Pieza: 00000006003444132870
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003444155111
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6360 - Nro Pieza: 00000006003444177352
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003444199593
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1827 - Nro Pieza: 00000006003444221834
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2322 - Nro Pieza: 00000006003444244075
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 2200 - Nro Pieza: 00000006003444266316
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003444288557
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1827 - Nro Pieza: 00000006003444310798
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - === Entregas_05.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2322 - Nro Pieza: 00000006003444333039
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 2200 - Nro Pieza: 00000006003444355280
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3000 - Nro Pieza: 00000006003444377521
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1888 - Nro Pieza: 00000006003444399762
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2322 - Nro Pieza: 00000006003444422003
+2018-09-24_22:28:00 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 2200 - Nro Pieza: 00000006003444444244
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000006003443243230
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3000 - Nro Pieza: 00000006003444466485
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 3100 - Nro Pieza: 00000006003444488726
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2600 - Nro Pieza: 00000006003444510967
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 2300 - Nro Pieza: 00000006003444533208
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: AND - Código Postal: 1408 - Nro Pieza: 00000006003444533208 - Motivo: No existe una sucursal con ese CP en el maestro de sucursales
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: FAS - Código Postal: 1408 - Nro Pieza: 00000006003444533208 - Motivo: No existe una sucursal con ese CP en el maestro de sucursales
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000000000003807896
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3560 - Nro Pieza: 00000006003444555449
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 3100 - Nro Pieza: 00000006003444577690
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000005401300
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6620 - Nro Pieza: 00000000000005404634
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7100 - Nro Pieza: 00000000000005407968
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2600 - Nro Pieza: 00000006003444599931
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 2300 - Nro Pieza: 00000006003444622172
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3560 - Nro Pieza: 00000006003444644413
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 6300 - Nro Pieza: 00000006003444666654
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2600 - Nro Pieza: 00000006003444688895
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - === Entregas_06.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000006003443421158
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2701 - Nro Pieza: 00000006003443443399
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6740 - Nro Pieza: 00000006003443465640
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7240 - Nro Pieza: 00000006003443487881
+2018-09-24_22:28:01 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000006003443510122
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2701 - Nro Pieza: 00000006003443532363
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6740 - Nro Pieza: 00000006003443554604
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7240 - Nro Pieza: 00000006003443576845
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000000133125
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 1141 - Nro Pieza: 00000000000000239794
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000000000000243128
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000000246462
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000006003443599086
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2701 - Nro Pieza: 00000006003443621327
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 6740 - Nro Pieza: 00000006003443643568
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7240 - Nro Pieza: 00000006003443665809
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1408 - Nro Pieza: 00000006003443688050
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 1427 - Nro Pieza: 00000000000000249796
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 1141 - Nro Pieza: 00000000000000253130
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000000259798
+2018-09-24_22:28:02 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2820 - Nro Pieza: 00000006003443710291
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: AND - Código Postal: 3260 - Nro Pieza: 00000006003443732532
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3200 - Nro Pieza: 00000006003443754773
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - === Entregas_07.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: AND - Código Postal: 2300 - Nro Pieza: 00000006003443754773 - Motivo: Falla en la verificación de vigencia del contrato con ese operador
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 3560 - Nro Pieza: 00000006003444733377
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 2000 - Nro Pieza: 00000006003444755618
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 2600 - Nro Pieza: 00000006003444777859
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 1405 - Nro Pieza: 00000000000005411302
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: RAP - Código Postal: 1010 - Nro Pieza: 00000000000005414636
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: AND - Código Postal: 6620 - Nro Pieza: 00000000000005414636 - Motivo: Falla en la verificación de vigencia del contrato con ese operador
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: FAS - Código Postal: 7100 - Nro Pieza: 00000000000005421304
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - Registro ACEPTADO. Operador: OCA - Código Postal: 2000 - Nro Pieza: 00000006003444800100
+2018-09-24_22:28:03 - maximiliano - proceso - INFO - === Entregas_08.txt === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer
+2018-09-24_22:29:03 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 2 ========================
+2018-09-24_22:29:03 - maximiliano - proceso - INFO - =======================      NO HAY NOVEDADES PARA PROCESAR      =======================
+2018-09-24_22:30:08 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 3 ========================
+2018-09-24_22:30:08 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:30:08 - maximiliano - proceso - INFO - === Entregas_02.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:30:13 - maximiliano - proceso - INFO - =======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================
+2018-09-24_22:30:13 - maximiliano - proceso - INFO - === Entregas_02.txt === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer
+2018-09-24_22:31:13 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 4 ========================
+2018-09-24_22:31:13 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:31:13 - maximiliano - proceso - INFO - === Entregas_02.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:31:18 - maximiliano - proceso - INFO - =======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================
+2018-09-24_22:31:18 - maximiliano - proceso - INFO - === Entregas_02.txt === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer
+2018-09-24_22:32:18 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 5 ========================
+2018-09-24_22:32:18 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:32:18 - maximiliano - proceso - INFO - === Entregas_02.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:32:23 - maximiliano - proceso - INFO - =======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================
+2018-09-24_22:32:23 - maximiliano - proceso - INFO - === Entregas_02.txt === Archivo RECHAZADO. Motivo: El trailer del archivo no coincide con los datos de los registros / no existe trailer
+2018-09-24_22:33:23 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 6 ========================
+2018-09-24_22:33:23 - maximiliano - proceso - INFO - =======================      NO HAY NOVEDADES PARA PROCESAR      =======================
+2018-09-24_22:34:28 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 7 ========================
+2018-09-24_22:34:28 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:34:28 - maximiliano - proceso - INFO - === Entregas_02.txt === Verificación de archivo OK. Se mueve al directorio de aceptados
+2018-09-24_22:34:34 - maximiliano - proceso - INFO - =======================      PROCESANDO ARCHIVOS ACEPTADOS      ========================
+2018-09-24_22:34:34 - maximiliano - proceso - INFO - === Entregas_02.txt === Verificación del trailer OK. Se procede a analizar los registros
+2018-09-24_22:34:34 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: FAR - Código Postal: 3560 - Nro Pieza: 00000006003444800100 - Motivo: No existe ese operador en el maestro de operadores
+2018-09-24_22:34:34 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: CAR - Código Postal: 6300 - Nro Pieza: 00000006003444800100 - Motivo: Falla en la verificación de vigencia del contrato con ese operador
+2018-09-24_22:34:34 - maximiliano - proceso - INFO - Registro RECHAZADO. Operador: OCA - Código Postal: 1000 - Nro Pieza: 00000006003444800100 - Motivo: No existe una sucursal con ese CP en el maestro de sucursales
+2018-09-24_22:35:34 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 8 ========================
+2018-09-24_22:35:34 - maximiliano - proceso - INFO - =======================      NO HAY NOVEDADES PARA PROCESAR      =======================
+2018-09-24_22:36:39 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 9 ========================
+2018-09-24_22:36:39 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:36:39 - maximiliano - proceso - INFO - === Entregas_04.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - ======================== SE INICIA CICLO DE PROCESAMIENTO NRO 10 ========================
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - =======================      VERIFICANDO ARCHIVOS ARRIBADOS      =======================
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_02.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_03.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_04.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_05.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_06.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente
+2018-09-24_22:37:44 - maximiliano - proceso - INFO - === Entregas_07.txt === Archivo RECHAZADO. Motivo: El archivo ya fué procesado anteriormente

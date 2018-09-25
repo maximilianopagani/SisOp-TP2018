@@ -1,0 +1,4 @@
+2018-09-24_21:32:57 - maximiliano - start - ERROR - No se pudo invocar el comando ya que el sistema no se encuentra inicializado
+2018-09-24_21:32:57 - maximiliano - start - INFO - Se invoca el comando correctamente. Se inicia proceso.sh
+2018-09-24_21:33:13 - maximiliano - start - ERROR - No se pudo invocar el comando debido a que proceso.sh ya se encuentra en ejecución
+2018-09-24_21:34:14 - maximiliano - start - INFO - Se invoca el comando correctamente. Se inicia proceso.sh
