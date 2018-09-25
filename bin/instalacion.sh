@@ -6,15 +6,15 @@ OP=""
 COMANDO=$0
 
 #Constantes de instalacion
-RUTAPAQUETE=$(pwd)'/grupo07.tar.gz'
-RUTADATOS=$(pwd)'/tmpGrupo02'
+RUTAPAQUETE=$(pwd)'/paquete_sisop_grupo02.tar.gz'
+RUTADATOS=$(pwd)'/sourcefiles'
 
 RUTAARCHIVOSMAESTROSYTABLAS=${RUTADATOS}'/mae'	
 
 RUTAACTUAL=$(pwd)
-RUTAEJECUTABLES="${RUTAACTUAL}/tmpGrupo02/bin"
-RUTAMAESTROS="${RUTAACTUAL}/tmpGrupo02/mae"
-RUTAEJEMPLOS="${RUTAACTUAL}/tmpGrupo02/Arribos"
+RUTAEJECUTABLES="${RUTAACTUAL}/sourcefiles/bin"
+RUTAMAESTROS="${RUTAACTUAL}/sourcefiles/mae"
+RUTAEJEMPLOS="${RUTAACTUAL}/sourcefiles/arribos"
 
 	
 chmod +x ./mover
