@@ -556,10 +556,10 @@ instalar(){
 	mv "grupo02.tar.gz" "sourcefiles" 
 	
 	rm "instalacion.sh"
-	rm "mover.sh"
-	mv "glog.sh" "$BINDIR"
+	rm "mover"
+	rm "glog" 
 	
-	mv "readme" "sourcefiles"
+	mv "README" "sourcefiles"
 
 	actualizarConfiguracion
 }
